@@ -1,0 +1,6 @@
+framework module Pods_NuttyPlayGroundTests {
+  umbrella header "Pods-NuttyPlayGroundTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

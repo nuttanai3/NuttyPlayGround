@@ -1,0 +1,28 @@
+PODS:
+  - CryptoSwift (1.4.0)
+  - GMEllipticCurveCrypto (1.3)
+  - lottie-ios (3.1.9)
+  - SwiftSocket (2.0.2)
+
+DEPENDENCIES:
+  - CryptoSwift
+  - GMEllipticCurveCrypto
+  - lottie-ios
+  - SwiftSocket
+
+SPEC REPOS:
+  trunk:
+    - CryptoSwift
+    - GMEllipticCurveCrypto
+    - lottie-ios
+    - SwiftSocket
+
+SPEC CHECKSUMS:
+  CryptoSwift: 7cc902df1784de3b389a387756c7d710f197730c
+  GMEllipticCurveCrypto: dff32bc22d2bfd73d6cbac841faeb40f8d79ce7f
+  lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
+
+PODFILE CHECKSUM: 6566724ef56d52156567a733a67f4fd2b8bdb28a
+
+COCOAPODS: 1.11.2

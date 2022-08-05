@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Socket Mobile View Controller-->
+        <scene sceneID="PPp-q3-cxt">
+            <objects>
+                <viewController storyboardIdentifier="SocketMobileViewController" id="aJN-H6-f66" customClass="SocketMobileViewController" customModule="NuttyPlayGround" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TMh-uv-HgB">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnx-VK-fb9">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ev-Vx-ybZ">
+                                        <rect key="frame" x="25" y="25" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Yvs-dv-vUm"/>
+                                            <constraint firstAttribute="height" constant="50" id="aJb-4P-wHu"/>
+                                        </constraints>
+                                        <state key="normal" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="aJN-H6-f66" eventType="touchUpInside" id="Dg3-id-rcj"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Socket Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lue-Eb-Je0">
+                                        <rect key="frame" x="330" y="39.5" width="108" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="6ev-Vx-ybZ" firstAttribute="leading" secondItem="fnx-VK-fb9" secondAttribute="leading" constant="25" id="AcG-WG-KeL"/>
+                                    <constraint firstItem="Lue-Eb-Je0" firstAttribute="centerY" secondItem="fnx-VK-fb9" secondAttribute="centerY" id="Ghh-bV-4Sl"/>
+                                    <constraint firstAttribute="height" constant="100" id="cmO-vg-ce3"/>
+                                    <constraint firstItem="6ev-Vx-ybZ" firstAttribute="centerY" secondItem="fnx-VK-fb9" secondAttribute="centerY" id="gr9-f2-Hn9"/>
+                                    <constraint firstItem="Lue-Eb-Je0" firstAttribute="centerX" secondItem="fnx-VK-fb9" secondAttribute="centerX" id="n3j-uG-7SL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8R6-DC-qQx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8R6-DC-qQx" firstAttribute="trailing" secondItem="fnx-VK-fb9" secondAttribute="trailing" id="5yR-HR-f9T"/>
+                            <constraint firstItem="fnx-VK-fb9" firstAttribute="leading" secondItem="8R6-DC-qQx" secondAttribute="leading" id="kVC-Xa-swa"/>
+                            <constraint firstItem="fnx-VK-fb9" firstAttribute="top" secondItem="8R6-DC-qQx" secondAttribute="top" id="rtg-Y5-lfh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uIR-b8-eyW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="131"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

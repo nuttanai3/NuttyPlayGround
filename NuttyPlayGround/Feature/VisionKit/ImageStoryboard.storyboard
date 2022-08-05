@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="Y6W-OH-hqX" customClass="CameraViewController" customModule="NuttyPlayGround" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ima-qt-6M4">
+                                <rect key="frame" x="10" y="30" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1sS-rg-WpJ"/>
+                                    <constraint firstAttribute="width" constant="150" id="VdM-eS-9be"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <connections>
+                                    <action selector="closeAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nz2-BE-2td"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exampleReciept01" translatesAutoresizingMaskIntoConstraints="NO" id="e31-hc-1Lg">
+                                <rect key="frame" x="40" y="100" width="688" height="824"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pye-EM-YPi">
+                                <rect key="frame" x="309" y="934" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="H4f-Ws-CDT"/>
+                                    <constraint firstAttribute="height" constant="50" id="e5d-0G-ghL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Action"/>
+                                <connections>
+                                    <action selector="actionAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qrN-gj-iQK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ima-qt-6M4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="ImH-aq-qRv"/>
+                            <constraint firstItem="e31-hc-1Lg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="MvD-Ih-NAB"/>
+                            <constraint firstItem="Pye-EM-YPi" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XcB-Mw-es5"/>
+                            <constraint firstItem="e31-hc-1Lg" firstAttribute="top" secondItem="ima-qt-6M4" secondAttribute="bottom" constant="20" id="eW0-Zn-8Et"/>
+                            <constraint firstItem="ima-qt-6M4" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="fVy-Vi-0N4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e31-hc-1Lg" secondAttribute="trailing" constant="40" id="gcL-6R-JOv"/>
+                            <constraint firstAttribute="bottom" secondItem="e31-hc-1Lg" secondAttribute="bottom" constant="100" id="iNk-fx-ibX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Pye-EM-YPi" secondAttribute="bottom" constant="40" id="kbt-id-0yV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="e31-hc-1Lg" id="0kz-AM-c3J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.84375" y="3.5156249999999996"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="exampleReciept01" width="270" height="1047"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

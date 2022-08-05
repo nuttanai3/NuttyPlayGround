@@ -1,0 +1,6 @@
+framework module Pods_NuttyPlayGround {
+  umbrella header "Pods-NuttyPlayGround-umbrella.h"
+
+  export *
+  module * { export * }
+}
