@@ -61,6 +61,7 @@ class PageListViewController: UIViewController {
 //        pageList.append(PageListModel(name: "Nav", pageKey: "NavigationMainViewController", storyKey: "NavigationStoryboard"))
 //        pageList.append(PageListModel(name: "ScrollView", pageKey: "ScrollViewController", storyKey: "ScrollViewStoryboard"))
         pageList.append(PageListModel(name: "CameraView", pageKey: "CameraViewController", storyKey: "ImageStoryboard"))
+        pageList.append(PageListModel(name: "TaskTest", pageKey: "TaskTestViewController", storyKey: "TaskTestStoryboard"))
     }
     
     @IBAction func closeAction(_ sender: Any) {
@@ -137,6 +138,12 @@ extension PageListViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             case "CameraViewController":
                 if let vc = story.instantiateViewController(identifier: page.pageKey) as? CameraViewController{
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    present(vc, animated: true, completion: nil)
+                }
+            case "TaskTestViewController":
+                if let vc = story.instantiateViewController(identifier: page.pageKey) as? TaskTestViewController{
                     vc.modalPresentationStyle = .fullScreen
                     vc.modalTransitionStyle = .crossDissolve
                     present(vc, animated: true, completion: nil)

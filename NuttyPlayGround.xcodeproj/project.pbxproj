@@ -18,6 +18,15 @@
 		104871D726C1162F00692598 /* EDCInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104871CF26C1162F00692598 /* EDCInteractor.swift */; };
 		104871D826C1162F00692598 /* EDCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104871D026C1162F00692598 /* EDCProtocol.swift */; };
 		104871DA26C1164400692598 /* EDCStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104871D926C1164400692598 /* EDCStoryboard.storyboard */; };
+		105A359D28A1424D00EA3312 /* TaskTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105A359C28A1424D00EA3312 /* TaskTestStoryboard.storyboard */; };
+		105A35A728A142B100EA3312 /* TaskTestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A359F28A142B100EA3312 /* TaskTestConfiguration.swift */; };
+		105A35A828A142B100EA3312 /* TaskTestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A028A142B100EA3312 /* TaskTestPresenter.swift */; };
+		105A35A928A142B100EA3312 /* TaskTestWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A128A142B100EA3312 /* TaskTestWorker.swift */; };
+		105A35AA28A142B100EA3312 /* TaskTestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A228A142B100EA3312 /* TaskTestRouter.swift */; };
+		105A35AB28A142B100EA3312 /* TaskTestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A328A142B100EA3312 /* TaskTestModels.swift */; };
+		105A35AC28A142B100EA3312 /* TaskTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A428A142B100EA3312 /* TaskTestViewController.swift */; };
+		105A35AD28A142B100EA3312 /* TaskTestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A528A142B100EA3312 /* TaskTestInteractor.swift */; };
+		105A35AE28A142B100EA3312 /* TaskTestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A35A628A142B100EA3312 /* TaskTestProtocol.swift */; };
 		1085C81928998E5D00EF198A /* CameraConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085C81128998E5D00EF198A /* CameraConfiguration.swift */; };
 		1085C81A28998E5D00EF198A /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085C81228998E5D00EF198A /* CameraPresenter.swift */; };
 		1085C81B28998E5D00EF198A /* CameraWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1085C81328998E5D00EF198A /* CameraWorker.swift */; };
@@ -125,6 +134,15 @@
 		104871D026C1162F00692598 /* EDCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EDCProtocol.swift; sourceTree = "<group>"; };
 		104871D926C1164400692598 /* EDCStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EDCStoryboard.storyboard; sourceTree = "<group>"; };
 		104DADE227620214005DDE35 /* NuttyPlayGround.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NuttyPlayGround.entitlements; sourceTree = "<group>"; };
+		105A359C28A1424D00EA3312 /* TaskTestStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskTestStoryboard.storyboard; sourceTree = "<group>"; };
+		105A359F28A142B100EA3312 /* TaskTestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestConfiguration.swift; sourceTree = "<group>"; };
+		105A35A028A142B100EA3312 /* TaskTestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestPresenter.swift; sourceTree = "<group>"; };
+		105A35A128A142B100EA3312 /* TaskTestWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestWorker.swift; sourceTree = "<group>"; };
+		105A35A228A142B100EA3312 /* TaskTestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestRouter.swift; sourceTree = "<group>"; };
+		105A35A328A142B100EA3312 /* TaskTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestModels.swift; sourceTree = "<group>"; };
+		105A35A428A142B100EA3312 /* TaskTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestViewController.swift; sourceTree = "<group>"; };
+		105A35A528A142B100EA3312 /* TaskTestInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestInteractor.swift; sourceTree = "<group>"; };
+		105A35A628A142B100EA3312 /* TaskTestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTestProtocol.swift; sourceTree = "<group>"; };
 		1085C81128998E5D00EF198A /* CameraConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfiguration.swift; sourceTree = "<group>"; };
 		1085C81228998E5D00EF198A /* CameraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPresenter.swift; sourceTree = "<group>"; };
 		1085C81328998E5D00EF198A /* CameraWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraWorker.swift; sourceTree = "<group>"; };
@@ -289,6 +307,30 @@
 			path = EDCViewController;
 			sourceTree = "<group>";
 		};
+		105A359B28A1421600EA3312 /* TaskTest */ = {
+			isa = PBXGroup;
+			children = (
+				105A359E28A1429000EA3312 /* TaskTestController */,
+				105A359C28A1424D00EA3312 /* TaskTestStoryboard.storyboard */,
+			);
+			path = TaskTest;
+			sourceTree = "<group>";
+		};
+		105A359E28A1429000EA3312 /* TaskTestController */ = {
+			isa = PBXGroup;
+			children = (
+				105A359F28A142B100EA3312 /* TaskTestConfiguration.swift */,
+				105A35A028A142B100EA3312 /* TaskTestPresenter.swift */,
+				105A35A128A142B100EA3312 /* TaskTestWorker.swift */,
+				105A35A228A142B100EA3312 /* TaskTestRouter.swift */,
+				105A35A328A142B100EA3312 /* TaskTestModels.swift */,
+				105A35A428A142B100EA3312 /* TaskTestViewController.swift */,
+				105A35A528A142B100EA3312 /* TaskTestInteractor.swift */,
+				105A35A628A142B100EA3312 /* TaskTestProtocol.swift */,
+			);
+			path = TaskTestController;
+			sourceTree = "<group>";
+		};
 		1085C81028998DFC00EF198A /* VisionKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +440,7 @@
 		109A073825BEEF950067B267 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				105A359B28A1421600EA3312 /* TaskTest */,
 				1085C81028998DFC00EF198A /* VisionKit */,
 				10D54E89279D5B8100DCD8CB /* Navigation */,
 				10EC992327F45CE0007D2AB6 /* scrollView */,
@@ -662,6 +705,7 @@
 				109A06C825BEDCD40067B267 /* Assets.xcassets in Resources */,
 				1030BFA9289ACFCA0099B7AD /* ImageStoryboard.storyboard in Resources */,
 				109A074C25BEF3100067B267 /* MainBackGround.json in Resources */,
+				105A359D28A1424D00EA3312 /* TaskTestStoryboard.storyboard in Resources */,
 				109A073C25BEF0270067B267 /* MainBackGround.xib in Resources */,
 				10F42ECC25C3C484008C9157 /* SocketMobileStoryboard.storyboard in Resources */,
 				10EC992527F45D0F007D2AB6 /* ScrollViewStoryboard.storyboard in Resources */,
@@ -801,6 +845,7 @@
 				10D54EA9279D5F4F00DCD8CB /* NavigationARouter.swift in Sources */,
 				108D2A6627ABDFA500151775 /* localtest.cpp in Sources */,
 				109A072D25BEEC740067B267 /* PageListModels.swift in Sources */,
+				105A35A728A142B100EA3312 /* TaskTestConfiguration.swift in Sources */,
 				1085C81F28998E5D00EF198A /* CameraInteractor.swift in Sources */,
 				109A075125BEF4C00067B267 /* MainBackGroundView.swift in Sources */,
 				10EC993027F45E3D007D2AB6 /* ScrollWorker.swift in Sources */,
@@ -815,17 +860,21 @@
 				104871D826C1162F00692598 /* EDCProtocol.swift in Sources */,
 				104871D126C1162F00692598 /* EDCConfiguration.swift in Sources */,
 				10EC993127F45E3D007D2AB6 /* ScrollRouter.swift in Sources */,
+				105A35A928A142B100EA3312 /* TaskTestWorker.swift in Sources */,
 				10F42EDC25C3C6F3008C9157 /* SocketMobileRouter.swift in Sources */,
 				109A076725BF13580067B267 /* PageTableViewCell.swift in Sources */,
 				10D54E98279D5C0900DCD8CB /* NavigationMainModels.swift in Sources */,
+				105A35AC28A142B100EA3312 /* TaskTestViewController.swift in Sources */,
 				1085C81A28998E5D00EF198A /* CameraPresenter.swift in Sources */,
 				10EC992F27F45E3D007D2AB6 /* ScrollPresenter.swift in Sources */,
 				10D54E97279D5C0900DCD8CB /* NavigationMainRouter.swift in Sources */,
 				1085C82028998E5D00EF198A /* CameraProtocol.swift in Sources */,
+				105A35AD28A142B100EA3312 /* TaskTestInteractor.swift in Sources */,
 				10D54E9B279D5C0900DCD8CB /* NavigationMainProtocol.swift in Sources */,
 				10EC993227F45E3D007D2AB6 /* ScrollModels.swift in Sources */,
 				10D54EA8279D5F4F00DCD8CB /* NavigationAWorker.swift in Sources */,
 				10D54EAB279D5F4F00DCD8CB /* NavigationAViewController.swift in Sources */,
+				105A35AB28A142B100EA3312 /* TaskTestModels.swift in Sources */,
 				109A072F25BEEC740067B267 /* PageListInteractor.swift in Sources */,
 				109A072C25BEEC740067B267 /* PageListRouter.swift in Sources */,
 				10D54EA7279D5F4F00DCD8CB /* NavigationAPresenter.swift in Sources */,
@@ -847,12 +896,14 @@
 				1085C81D28998E5D00EF198A /* CameraModels.swift in Sources */,
 				109A06BD25BEDCD30067B267 /* AppDelegate.m in Sources */,
 				104871D626C1162F00692598 /* EDCViewController.swift in Sources */,
+				105A35A828A142B100EA3312 /* TaskTestPresenter.swift in Sources */,
 				1085C81B28998E5D00EF198A /* CameraWorker.swift in Sources */,
 				10F42ED925C3C6F3008C9157 /* SocketMobileConfiguration.swift in Sources */,
 				104871D426C1162F00692598 /* EDCRouter.swift in Sources */,
 				10EC993327F45E3D007D2AB6 /* ScrollViewController.swift in Sources */,
 				108D2A6927ABDFA500151775 /* nativebroadcast.cpp in Sources */,
 				108D2A6A27ABDFA500151775 /* BroadCastDiscovery.cpp in Sources */,
+				105A35AE28A142B100EA3312 /* TaskTestProtocol.swift in Sources */,
 				10DDA3BE26CB8A6000C593A0 /* GMEllipticCurveCryptoService.m in Sources */,
 				109A06CE25BEDCD40067B267 /* main.m in Sources */,
 				10D54E9A279D5C0900DCD8CB /* NavigationMainInteractor.swift in Sources */,
@@ -860,6 +911,7 @@
 				10EC992E27F45E3D007D2AB6 /* ScrollConfiguration.swift in Sources */,
 				109A06C025BEDCD30067B267 /* SceneDelegate.m in Sources */,
 				109A072925BEEC740067B267 /* PageListConfiguration.swift in Sources */,
+				105A35AA28A142B100EA3312 /* TaskTestRouter.swift in Sources */,
 				10D54E96279D5C0900DCD8CB /* NavigationMainWorker.swift in Sources */,
 				10D54E95279D5C0900DCD8CB /* NavigationMainPresenter.swift in Sources */,
 				104871D226C1162F00692598 /* EDCPresenter.swift in Sources */,
