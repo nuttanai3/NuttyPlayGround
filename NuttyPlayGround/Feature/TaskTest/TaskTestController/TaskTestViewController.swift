@@ -34,6 +34,15 @@ class TaskTestViewController: UIViewController {
     
     var messages = [Message]()
     
+    struct NewsStory: Identifiable, Decodable {
+        let id: Int
+        let title: String
+        let strap: String
+        let url: URL
+    }
+    
+    var stories = [NewsStory]()
+    
     // MARK: View lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -99,14 +108,58 @@ class TaskTestViewController: UIViewController {
         }
     }
     
+    func printMessage() async {
+        let string = await withTaskGroup(of: String.self) { group -> String in
+            group.addTask { "Hello" }
+            group.addTask { "From" }
+            group.addTask { "A" }
+            group.addTask { "Task" }
+            group.addTask { "Group" }
+            
+            var collected = [String]()
+            
+            for await value in group {
+                collected.append(value)
+            }
+            
+            return collected.joined(separator: " ")
+        }
+        
+        print(string)
+    }
+    
+    func loadStories() async -> [NewsStory]? {
+        do {
+//            stories =
+            return try await withThrowingTaskGroup(of: [NewsStory].self) { group -> [NewsStory] in
+                for i in 1...5 {
+                    group.addTask {
+                        let url = URL(string: "https://hws.dev/news-\(i).json")!
+                        let (data, _) = try await URLSession.shared.data(from: url)
+                        return try JSONDecoder().decode([NewsStory].self, from: data)
+                    }
+                }
+                
+                let allStories = try await group.reduce(into: [NewsStory]()) { $0 += $1 }
+                return allStories.sorted { $0.id > $1.id }
+            }
+        } catch {
+            print("Failed to load stories")
+            return nil
+        }
+    }
+    
     @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
     
-    @IBAction func clickMeAction(_ sender: UIButton) {
+    @IBAction func scoreAction(_ sender: UIButton) {
         Task{
             await fetchUpdates()
         }
+    }
+    
+    @IBAction func messageAction(_ sender: UIButton) {
         if messages.isEmpty {
             print("message null")
             Task{
@@ -115,6 +168,21 @@ class TaskTestViewController: UIViewController {
         } else {
             for (index, messageTemp) in messages.enumerated() {
                 print("message(\(index)): \(messageTemp.text)")
+            }
+        }
+    }
+    
+    @IBAction func printMessageTaskGroupAction(_ sender: UIButton) {
+        Task{
+            await printMessage()
+        }
+    }
+    
+    @IBAction func newsStoryAction(_ sender: UIButton) {
+        Task {
+            stories = await loadStories() ?? [NewsStory]()
+            for (index, storie) in stories.enumerated() {
+                print("storie(\(index)): \(storie.title)")
             }
         }
     }

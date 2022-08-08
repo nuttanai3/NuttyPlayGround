@@ -18,29 +18,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yt4-QS-0Gz">
-                                <rect key="frame" x="10" y="30" width="84" height="35"/>
+                                <rect key="frame" x="10" y="30" width="83.5" height="34.5"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Close"/>
                                 <connections>
                                     <action selector="closeAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q09-Gq-7Pb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-Xw-4Zm">
-                                <rect key="frame" x="673" y="30" width="85" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="ClickMe"/>
-                                <connections>
-                                    <action selector="clickMeAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HvT-ML-NVL"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="27z-YW-tJo">
+                                <rect key="frame" x="280" y="443" width="208" height="138"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-Xw-4Zm">
+                                        <rect key="frame" x="0.0" y="0.0" width="208" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Score"/>
+                                        <connections>
+                                            <action selector="scoreAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lig-bf-aHT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWw-9e-ltx">
+                                        <rect key="frame" x="0.0" y="34.5" width="208" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Message"/>
+                                        <connections>
+                                            <action selector="messageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="91X-cm-EEg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE7-nZ-g5G">
+                                        <rect key="frame" x="0.0" y="69" width="208" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="printMessageTaskGroup"/>
+                                        <connections>
+                                            <action selector="printMessageTaskGroupAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8OK-At-vYK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-js-s1Y">
+                                        <rect key="frame" x="0.0" y="103.5" width="208" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="NewsStory"/>
+                                        <connections>
+                                            <action selector="newsStoryAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="00Q-4d-rJW"/>
+                                            <action selector="printMessageTaskGroupAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FZo-yK-eFq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="27z-YW-tJo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="F7W-tS-73n"/>
                             <constraint firstItem="Yt4-QS-0Gz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Gxe-zs-Vye"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yLc-Xw-4Zm" secondAttribute="trailing" constant="10" id="hnZ-Fd-ffP"/>
                             <constraint firstItem="Yt4-QS-0Gz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="hp9-Ws-0gQ"/>
-                            <constraint firstItem="yLc-Xw-4Zm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="pIs-12-gNl"/>
+                            <constraint firstItem="27z-YW-tJo" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mBs-IX-r5F"/>
                         </constraints>
                     </view>
                 </viewController>
