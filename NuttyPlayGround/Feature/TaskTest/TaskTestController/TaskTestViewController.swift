@@ -13,8 +13,21 @@ class TaskTestViewController: UIViewController {
     var router: (TaskTestRoutingLogic & TaskTestDataPassing)?
     
     // MARK: @IBOutlet
+    @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var taskTable: UITableView!
     
     // MARK: Data
+    enum ButtonAction {
+        case scoreAction
+        case messageAction
+        case printMessageTaskGroupAction
+        case newsStoryAction
+        case none
+    }
+    
+    var dataArray = [String]()
+    var buttonAction: ButtonAction = .none
+    
     struct NewsItem: Decodable {
         let id: Int
         let title: String
@@ -62,6 +75,55 @@ class TaskTestViewController: UIViewController {
     
     private func setupView() {
         // set view something
+        taskTable.register(UINib(nibName: "TaskDetailTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "TaskDetailTableViewCell")
+    }
+    
+    @IBAction func closeAction(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func scoreAction(_ sender: UIButton) {
+        Task{
+            await fetchUpdates()
+        }
+    }
+    
+    @IBAction func messageAction(_ sender: UIButton) {
+        if messages.isEmpty {
+            print("message null")
+            Task{
+                await loadMessages()
+            }
+        } else {
+            var dataTemp = [String]()
+            for (index, messageTemp) in messages.enumerated() {
+                print("message(\(index)): \(messageTemp.text)")
+                dataTemp.append(messageTemp.text)
+            }
+            dataArray = dataTemp
+            headerLabel.text = dataArray.first ?? ""
+            taskTable.reloadData()
+        }
+    }
+    
+    @IBAction func printMessageTaskGroupAction(_ sender: UIButton) {
+        Task{
+            await printMessage()
+        }
+    }
+    
+    @IBAction func newsStoryAction(_ sender: UIButton) {
+        Task {
+            stories = await loadStories() ?? [NewsStory]()
+            var dataTemp = [String]()
+            for (index, storie) in stories.enumerated() {
+                print("storie(\(index)): \(storie.title)")
+                dataTemp.append(storie.title)
+            }
+            dataArray = dataTemp
+            headerLabel.text = dataArray.first ?? ""
+            taskTable.reloadData()
+        }
     }
     
     // MARK: Do something
@@ -87,10 +149,16 @@ class TaskTestViewController: UIViewController {
             let news = try await newsTask.value
             let highScores = try await highScoreTask.value
             print("Latest news loaded with \(news.count) items.")
-            
+            var dataTemp = [String]()
+            for newsItem in news {
+                dataTemp.append(newsItem.title)
+            }
+            dataArray = dataTemp
             if let topScore = highScores.first {
                 print("\(topScore.name) has the highest score with \(topScore.score), out of \(highScores.count) total results.")
+                headerLabel.text = "\(topScore.name) has the highest score with \(topScore.score), out of \(highScores.count) total results."
             }
+            taskTable.reloadData()
         } catch {
             print("There was an error loading user data.")
         }
@@ -101,6 +169,7 @@ class TaskTestViewController: UIViewController {
             let url = URL(string: "https://hws.dev/messages.json")!
             let (data, _) = try await URLSession.shared.data(from: url)
             messages = try JSONDecoder().decode([Message].self, from: data)
+            messageAction(UIButton())
         } catch {
             messages = [
                 Message(id: 0, from: "Failed to load inbox.", text: "Please try again later.")
@@ -124,13 +193,14 @@ class TaskTestViewController: UIViewController {
             
             return collected.joined(separator: " ")
         }
-        
+        dataArray = [string]
+        headerLabel.text = string
+        taskTable.reloadData()
         print(string)
     }
     
     func loadStories() async -> [NewsStory]? {
         do {
-//            stories =
             return try await withThrowingTaskGroup(of: [NewsStory].self) { group -> [NewsStory] in
                 for i in 1...5 {
                     group.addTask {
@@ -146,44 +216,6 @@ class TaskTestViewController: UIViewController {
         } catch {
             print("Failed to load stories")
             return nil
-        }
-    }
-    
-    @IBAction func closeAction(_ sender: UIButton) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func scoreAction(_ sender: UIButton) {
-        Task{
-            await fetchUpdates()
-        }
-    }
-    
-    @IBAction func messageAction(_ sender: UIButton) {
-        if messages.isEmpty {
-            print("message null")
-            Task{
-                await loadMessages()
-            }
-        } else {
-            for (index, messageTemp) in messages.enumerated() {
-                print("message(\(index)): \(messageTemp.text)")
-            }
-        }
-    }
-    
-    @IBAction func printMessageTaskGroupAction(_ sender: UIButton) {
-        Task{
-            await printMessage()
-        }
-    }
-    
-    @IBAction func newsStoryAction(_ sender: UIButton) {
-        Task {
-            stories = await loadStories() ?? [NewsStory]()
-            for (index, storie) in stories.enumerated() {
-                print("storie(\(index)): \(storie.title)")
-            }
         }
     }
 }
@@ -203,4 +235,20 @@ extension TaskTestViewController {
     private func configure() {
         TaskTestConfiguration.shared.configure(self)
     }
+}
+
+extension TaskTestViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "TaskDetailTableViewCell") as? TaskDetailTableViewCell , dataArray.count > indexPath.row{
+            cell.setCell(text1: dataArray[indexPath.row], text2: "")
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
 }

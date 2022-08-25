@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21223" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21204"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,54 +25,79 @@
                                     <action selector="closeAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q09-Gq-7Pb"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="27z-YW-tJo">
-                                <rect key="frame" x="280" y="443" width="208" height="138"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="2B7-2o-Lle">
+                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-Xw-4Zm">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Score"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7q-rO-uKN">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yLN-8B-bok">
+                                        <rect key="frame" x="0.0" y="52" width="768" height="712"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
-                                            <action selector="scoreAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lig-bf-aHT"/>
+                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="Q1e-AZ-pV2"/>
+                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="fHW-hN-r6f"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWw-9e-ltx">
-                                        <rect key="frame" x="0.0" y="34.5" width="208" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Message"/>
-                                        <connections>
-                                            <action selector="messageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="91X-cm-EEg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE7-nZ-g5G">
-                                        <rect key="frame" x="0.0" y="69" width="208" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="printMessageTaskGroup"/>
-                                        <connections>
-                                            <action selector="printMessageTaskGroupAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8OK-At-vYK"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-js-s1Y">
-                                        <rect key="frame" x="0.0" y="103.5" width="208" height="34.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="NewsStory"/>
-                                        <connections>
-                                            <action selector="newsStoryAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="00Q-4d-rJW"/>
-                                            <action selector="printMessageTaskGroupAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FZo-yK-eFq"/>
-                                        </connections>
-                                    </button>
+                                    </tableView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="27z-YW-tJo">
+                                        <rect key="frame" x="0.0" y="786" width="768" height="168"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLc-Xw-4Zm">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Score"/>
+                                                <connections>
+                                                    <action selector="scoreAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lig-bf-aHT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWw-9e-ltx">
+                                                <rect key="frame" x="0.0" y="44.5" width="768" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Message"/>
+                                                <connections>
+                                                    <action selector="messageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="91X-cm-EEg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE7-nZ-g5G">
+                                                <rect key="frame" x="0.0" y="89" width="768" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="printMessageTaskGroup"/>
+                                                <connections>
+                                                    <action selector="printMessageTaskGroupAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8OK-At-vYK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7y-js-s1Y">
+                                                <rect key="frame" x="0.0" y="133.5" width="768" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="NewsStory"/>
+                                                <connections>
+                                                    <action selector="newsStoryAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="00Q-4d-rJW"/>
+                                                    <action selector="printMessageTaskGroupAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FZo-yK-eFq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="27z-YW-tJo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="F7W-tS-73n"/>
+                            <constraint firstItem="2B7-2o-Lle" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="33V-6M-hUW"/>
+                            <constraint firstItem="2B7-2o-Lle" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="GPW-WO-jFM"/>
                             <constraint firstItem="Yt4-QS-0Gz" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Gxe-zs-Vye"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2B7-2o-Lle" secondAttribute="bottom" id="dAL-6I-CfR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2B7-2o-Lle" secondAttribute="trailing" id="eD0-ds-KeV"/>
                             <constraint firstItem="Yt4-QS-0Gz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="hp9-Ws-0gQ"/>
-                            <constraint firstItem="27z-YW-tJo" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="mBs-IX-r5F"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="r7q-rO-uKN" id="kS1-61-1J7"/>
+                        <outlet property="taskTable" destination="yLN-8B-bok" id="I6b-pP-Gfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,6 +105,12 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
