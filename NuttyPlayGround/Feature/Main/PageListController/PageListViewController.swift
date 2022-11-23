@@ -56,10 +56,10 @@ class PageListViewController: UIViewController {
     }
     
     func setPageList() {
-//        pageList.append(PageListModel(name: "Socket Mobile", pageKey: "SocketMobileViewController", storyKey: "SocketMobileStoryboard"))
-//        pageList.append(PageListModel(name: "EDC", pageKey: "EDCViewController", storyKey: "EDCStoryboard"))
-//        pageList.append(PageListModel(name: "Nav", pageKey: "NavigationMainViewController", storyKey: "NavigationStoryboard"))
-//        pageList.append(PageListModel(name: "ScrollView", pageKey: "ScrollViewController", storyKey: "ScrollViewStoryboard"))
+        pageList.append(PageListModel(name: "Socket Mobile", pageKey: "SocketMobileViewController", storyKey: "SocketMobileStoryboard"))
+        pageList.append(PageListModel(name: "EDC", pageKey: "EDCViewController", storyKey: "EDCStoryboard"))
+        pageList.append(PageListModel(name: "Nav", pageKey: "NavigationMainViewController", storyKey: "NavigationStoryboard"))
+        pageList.append(PageListModel(name: "ScrollView", pageKey: "ScrollViewController", storyKey: "ScrollViewStoryboard"))
         pageList.append(PageListModel(name: "CameraView", pageKey: "CameraViewController", storyKey: "ImageStoryboard"))
         pageList.append(PageListModel(name: "TaskTest", pageKey: "TaskTestViewController", storyKey: "TaskTestStoryboard"))
     }

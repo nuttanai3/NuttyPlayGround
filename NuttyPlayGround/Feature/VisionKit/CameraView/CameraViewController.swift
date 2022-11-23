@@ -85,7 +85,6 @@ class CameraViewController: UIViewController, ImageAnalysisInteractionDelegate, 
     }
     
     @IBAction func actionAction(_ sender: UIButton) {
-        
         print("ImageAnalyzer.isSupported: \(ImageAnalyzer.isSupported)")
         showLiveText()
     }
